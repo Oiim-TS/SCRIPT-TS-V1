@@ -590,6 +590,90 @@ end
 
 end
 
+--============================--
+--      EXPIRY CHECK ONLY    --
+--============================--
+local EXPIRY_DATETIME = "2026-05-30 17:59:59"
+
+local function check_expiry_now()
+    local y,m,d,h,mi,s =
+        EXPIRY_DATETIME:match("(%d+)%-(%d+)%-(%d+)%s+(%d+):(%d+):(%d+)")
+
+    if not y then
+        gg.alert("❌ Format expiry salah")
+        os.exit()
+    end
+
+    local expiry_ts = os.time({
+        year  = tonumber(y),
+        month = tonumber(m),
+        day   = tonumber(d),
+        hour  = tonumber(h),
+        min   = tonumber(mi),
+        sec   = tonumber(s)
+    })
+
+    local now = os.time()
+
+    -- ❌ JIKA EXPIRED
+    if now >= expiry_ts then
+        gg.alert(
+            "❌ SCRIPT EXPIRED\n\n" ..
+            "📅 Expiry: " .. EXPIRY_DATETIME
+        )
+        os.exit()
+    end
+
+    -- 🔥 HITUNG SISA WAKTU
+    local diff = expiry_ts - now
+
+    local years  = math.floor(diff / 31536000)
+    diff = diff % 31536000
+
+    local months = math.floor(diff / 2592000)
+    diff = diff % 2592000
+
+    local days   = math.floor(diff / 86400)
+    diff = diff % 86400
+
+    local hours  = math.floor(diff / 3600)
+    diff = diff % 3600
+
+    local mins   = math.floor(diff / 60)
+    local secs   = math.floor(diff % 60)
+
+    local timeText = ""
+
+local function add(val, label)
+  if val > 0 then
+    timeText = timeText .. string.format("%d%s ", val, label)
+  end
+end
+
+add(years, " Tahun\n")
+add(months, " Bulan\n")
+add(days, " Hari\n")
+add(hours, " Jam\n")
+add(mins, " Menit\n")
+add(secs, " Detik")
+
+if timeText == "" then
+  timeText = "0D"
+end
+
+timeText = timeText:match("^%s*(.-)%s*$")
+    -- 🔔 POPUP
+    gg.alert(
+        "✅ SCRIPT AKTIF\n\n" ..
+        "📅 Expiry: " .. EXPIRY_DATETIME
+    )
+end
+
+check_expiry_now()
+--========================--
+--  END TIME LIMIT BLOCK  --
+--========================--
+
 SkinData = {
 {name="GATSBY ISLAND RESIDENCE", code="r1Skins"},
 {name="GATSBY ISLAND MANOR", code="r2Skins"},
@@ -3202,13 +3286,15 @@ elseif menu_tipo == 77000 then
     PRV = gg.choice({	
          "💵 • TCASH",
 	       "🪙 • COINS " ,
+         "⭐ • EXP ",
          "🔙 • Volver"        
    }, nil, 'CHOOSE ONE OPTION')
     
     if PRV == nil then return end
     if PRV == 1 then hackTHO("th6") end
     if PRV == 2 then hackTHO("th616") end
-    if PRV == 3 then menuescolhas2(1) end
+    if PRV == 3 then hackTHO("th6161") end
+    if PRV == 4 then menuescolhas2(1) end
 	
 	 elseif menu_tipo == 9287 then
     MNxC = gg.choice({
@@ -7193,57 +7279,102 @@ end
 
  
 function hackTHO(variac)
-  gg.toast( "Script Loading...")
-  gg.processResume()
-  gg.clearResults()
-  gg.setVisible(false)
-	 local int234 = nil
-	 if variac == "th6"then
-    int234 = gg.prompt({  "Amount of tcash? [0; 500] Max 10000/3Month"}, {1}, {"number"})
-    int234[1] = tonumber(int234[1])
-  end
-  
-  	 local int2345 = nil
-	 if variac == "th616"then
-    int2345 = gg.prompt({  "Amount of coins? [0; 500000]"}, {1}, {"number"})
-    int2345[1] = tonumber(int2345[1])
-  end
-    -- TCASH UNLIMITED 1935762184;104;0;0;0;0
+
+    gg.toast("Script Loading...")
+    gg.processResume()
+    gg.clearResults()
+    gg.setVisible(false)
+
+    local amount = nil
+
+
     if variac == "th6" then
- 
-	add_to_1 = 1935762184
-	add_to_2 = 104
-	add_to_3 = 0
-	add_to_4 = 0
-	add_to_5 = 0
-	add_to_6 = 0
-	add_to_7 = 0
-	add_to_8 =  int234[1]
-	setdAhI()
-	
-	elseif variac == "th616" then --696F630Ah;0000736Eh;00000000h;00000000h;00000000h;00000000h
-	add_to_1 = "696F630Ah"
-	add_to_2 = "0000736Eh"
-	add_to_3 = "00000000h"
-	add_to_4 = "00000000h"
-	add_to_5 = "00000000h"
-	add_to_6 = "00000000h"
-	add_to_7 = "00000000h"
-	add_to_8 =  int2345[1]
-	setdAhI()
-    elseif variac == "th7" then --.statue_writer El primer escritor 6174731Ah;5F657574h;74697277h;00007265h;00000000h;00000000h
- 
-	add_to_1 = "6174731Ah"
-	add_to_2 = "5F657574h"
-	add_to_3 = "74697277h"
-	add_to_4 = "00007265h"
-	add_to_5 = "00000000h"
-	add_to_6 = "00000000h"
-	add_to_7 = 0
-	add_to_8 = 1
-	setdAhI()
-  end
-  gg.clearResults()
+        local p = gg.prompt(
+            {"Amount of tcash? [0;100000] Max 10000/3Month"},
+            {1},
+            {"number"}
+        )
+
+        if not p then return end
+        amount = tonumber(p[1])
+
+        if not amount or amount < 0 or amount > 100000 then
+            gg.alert("❌ Invalid Amount")
+            return
+        end
+
+    elseif variac == "th616" then
+        local p = gg.prompt(
+            {"Amount of coins? [0;999999]"},
+            {1},
+            {"number"}
+        )
+
+        if not p then return end
+        amount = tonumber(p[1])
+
+        if not amount or amount < 0 or amount > 999999 then
+            gg.alert("❌ Invalid Amount")
+            return
+        end
+
+    elseif variac == "th6161" then
+        local p = gg.prompt(
+            {"Amount of exp? [0;1000000]"},
+            {1},
+            {"number"}
+        )
+
+        if not p then return end
+        amount = tonumber(p[1])
+
+        if not amount or amount < 0 or amount > 1000000 then
+            gg.alert("❌ Invalid Amount")
+            return
+        end
+    end
+
+    if variac == "th6" then
+
+        add_to_1 = 1935762184
+        add_to_2 = 104
+        add_to_3 = 0
+        add_to_4 = 0
+        add_to_5 = 0
+        add_to_6 = 0
+        add_to_7 = 0
+        add_to_8 = amount
+
+        setdAhI()
+
+    elseif variac == "th616" then
+
+        add_to_1 = "696F630Ah"
+        add_to_2 = "0000736Eh"
+        add_to_3 = "00000000h"
+        add_to_4 = "00000000h"
+        add_to_5 = "00000000h"
+        add_to_6 = "00000000h"
+        add_to_7 = "00000000h"
+        add_to_8 = amount
+
+        setdAhI()
+
+    elseif variac == "th6161" then
+
+        add_to_1 = "6174731Ah"
+        add_to_2 = "5F657574h"
+        add_to_3 = "74697277h"
+        add_to_4 = "00007265h"
+        add_to_5 = "00000000h"
+        add_to_6 = "00000000h"
+        add_to_7 = 0
+        add_to_8 = amount
+
+        setdAhI()
+    end
+
+    gg.clearResults()
 end
 
 
@@ -14479,7 +14610,8 @@ function hackhelicopter_16()
   for i,v in ipairs(val) do v.address = v.value end
 
   local data = {
-    "6E696B53h","6C65485Fh","706F6369h","5F726574h","74726942h","79616468h","3230325Fh","65730035h"
+    "6E696B53h","6C65485Fh","706F6369h","5F726574h","74726942h","79616468h","3230325Fh","00000035h"
+    ---6E696B53h;6C65485Fh;706F6369h;5F726574h;74726942h;79616468h;3230325Fh;00000035h
 }
 
   for i = 1, #data do
@@ -15898,6 +16030,7 @@ function hackhelicopterPlace_21()
 
   local data = {
     "6E696B53h","6C65485Fh","706F6369h","50726574h","6563616Ch","7269425Fh","61646874h","30325F79h","2E003532h","006C6D78h","6C00006Ch","74202200h"
+    ----6E696B53h;6C65485Fh;706F6369h;50726574h;6563616Ch;7269425Fh;61646874h;30325F79h;2E003532h;006C6D78h;6C00006Ch;74202200h
 }
 
   for i = 1, #data do
@@ -51173,17 +51306,17 @@ nil,
 
 
 if opcao then
-     if opcao == 1 then hack15cD() end
+    if opcao == 1 then hack15cD() end
   	if opcao == 2 then CongelarCupon() end 
 	  if opcao == 3 then Congelar_Tesoro() end
-      if opcao == 4 then menuescolhas2(1) end    
-      if opcao == 5 then UnlockAchievements() end
-      if opcao == 6 then UnlockAnimal() end
-      if opcao == 7 then MenuFactoryMarket() end
+    if opcao == 4 then menuescolhas2(1) end    
+    if opcao == 5 then UnlockAchievements() end
+    if opcao == 6 then UnlockAnimal() end
+    if opcao == 7 then MenuFactoryMarket() end
 	  if opcao == 8 then CityMenu() end
 	  if opcao == 9 then MenuRequest() end
   	if opcao == 10then hackMineDepth() end
-      if opcao == 11 then os.exit() end
+    if opcao == 11 then EXIT() end
 
   end
 end
