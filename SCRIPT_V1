@@ -15979,7 +15979,7 @@ function hackhelicopterPlace_21()
   end
   
 
-  hackDynamic_29h("rExpe_2")
+  hackDynamic_34h("rExpe_2")
 end
 
 function hackhelicopterPlace_22()
