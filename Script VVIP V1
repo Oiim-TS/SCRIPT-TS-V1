@@ -2640,7 +2640,7 @@ function menuescolhas2(menu_tipo)
 "172. 🏭 • ava Walikota 1 Tahun",
 "173. 🏭 • ava Walikota 2 Tahun",
 "174. 🏭 • ava Selama 3 Tahun",
-"175. 🔙 • Volver",
+"175. 🔙 • BACK",
 
     }, nil, 'CHOOSE ONE OPTION')
     if MAVATR == nil then return end
@@ -2889,7 +2889,7 @@ if MAVATR == 175 then menuescolhas2(1) end
        '🌟 • Sticker 53',
        '🌟 • Sticker 54',
        '🌟 • Sticker 55',
-       '🔙 • Volver'
+       '🔙 • BACK'
     }, nil, 'CHOOSE ONE OPTION')
     if MSTICK == nil then return end
     if MSTICK == 1 then hack("t1STICK") end
@@ -3000,7 +3000,7 @@ if MAVATR == 175 then menuescolhas2(1) end
        '🌟 • Sticker 48x',
        '🌟 • Sticker 49x',
        '🌟 • Sticker 50x',
-       '🔙 • Volver'
+       '🔙 • BACK'
     }, nil, 'CHOOSE ONE OPTION')
   if MSTICKx == nil then return end
   if MSTICKx == 1 then hack("t1STICKx") end
@@ -3113,7 +3113,7 @@ MCARTE = gg.choice({
 '🪧 • SMARD GARDEN TOWN SIGN', 
 '🪧 • SWEET TREET TOWN SIGN', 
 '🪧 • PENGUIN RESORT TOWN SIGN',  
-'🔙 • Back'     
+'🔙 • BACK'     
     }, nil, 'CHOOSE ONE OPTION')
 
     if MCARTE == nil then return end
@@ -3178,14 +3178,14 @@ MCARTE = gg.choice({
 
   elseif menu_tipo == 5 then
     MNC = gg.choice({
-'🎫 • Order Coupon',
-'🎫 • Expansion Coupon',
-'🎫 • Granary Coupon',
-'🎫 • Industry Coupon',
-'🎫 • Train Coupon',
-'🎫 • Island Coupon',
-'🎫 • Merchant Coupon',
-'🔙 • Return'
+'🎫 • LOAD COUPON',
+'🎫 • EXPANSIONS COUPON',
+'🎫 • BARN UPGRADE COUPON',
+'🎫 • FACTORY UPGRADE COUPON',
+'🎫 • TRAIN UPGRADE COUPON',
+'🎫 • ISLAND UPGRADE COUPON',
+'🎫 • DEALER COUPON',
+'🔙 • BACK'
     }, nil, 'CHOOSE ONE OPTION')
     
     if MNC == nil then return end
@@ -3211,7 +3211,7 @@ MCARTE = gg.choice({
 '🏅 • LEGENDARY SPRING BADGE',
 '🏅 • CULINARY BADGE',
 '🏅 • LEGENDARY CULINARY BADGE',
-      '🔙 • Return'     
+      '🔙 • BACK'     
     }, nil, 'CHOOSE ONE OPTION')
     
     if MYU == nil then return end
@@ -3243,7 +3243,7 @@ elseif menu_tipo == 22000 then
 '🎖 • PURPLE TORNADO TITLE',
 '🎖 • GOLDEN TRAIN TITLE',
 '🎖 • PURPLE TRAIN TITLE',
-      '🔙 • Return'
+      '🔙 • BACK'
     }, nil, 'CHOOSE ONE TITLE')    
 if TTL == nil then return end
 if TTL == 1 then hackTitle("t3") end
@@ -3279,10 +3279,10 @@ if TTL == 13 then menuescolhas2(1) end
 
 elseif menu_tipo == 77000 then
     MCZOO = gg.choice({
-      '🟡 • Cards Gold',
-      '🔵 • Cards Blue',
-	    '🟤 • Cards Brown',
-      '🔙 • Return'     
+      '🟡 • GOLD CARD',
+      '🔵 • BLUE CARD',
+	  '🟤 • BROWN CARD',
+      '🔙 • BACK'     
     }, nil, 'CHOOSE ONE OPTION')
   if MCZOO == nil then return end
   if MCZOO == 1 then hack("CardZoo_1") end
@@ -50239,11 +50239,11 @@ end
 --------------------------------------------------
 function MenuFactoryMarket()
     local menu = gg.choice({
-        "📦 CHANGE PRICE AND QUANTITY",
-        "⏰ FREEZE DEALER TIME",
-        "🏭 FACTORY BOX",
-        "💵 MARKET BOX",
-        "🔙 BACK"
+        "📦 • CHANGE PRICE AND QUANTITY",
+        "⏰ • FREEZE DEALER TIME",
+        "🏭 • FACTORY BOX",
+        "💵 • MARKET BOX",
+        "🔙 • BACK"
     }, nil, [[
 ════════════════════
     📃 Script by : Kcg Oyn 😺 
@@ -50932,7 +50932,7 @@ function CityMenu()
         "🗺️ • OPEN LAND PER TILE",
         "🏛️ • OPEN COMMUNITY BUILDING (NO MATERIALS",
         "🧹 • FREEZE POPULATION",
-        "🔙 Back"
+        "🔙 • BACK"
     }, nil, [==[
 ╔════════          ≽^•⩊•^≼         ════════╗
          📃 YT: Jesús M  │  Update : OIM - (82)²  
@@ -51255,7 +51255,7 @@ local opcao = gg.choice(
  "🏙️ CITY HACK 🏙️",
  "📥 ENHANCEMENT 📥",
  "⛏️ INCREASE MINE ⛏️",
- "🔙 Exit"
+ "🔙 EXIT"
 },
 nil,
 [==[
