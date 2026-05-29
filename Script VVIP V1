@@ -44,14 +44,6 @@ gg.setValues(items)
  gg.sleep(100)
 end
 
-function EXIT()
-    gg.toast("❤️ HACKING COMPLETED ❤️")
-    gg.alert(" 😍 SERATUS RUPIAHNYA DONASIIN YA KAKAA 😍")
-    print("👍 Jangan Baperan Kaka 👍")
-    print("😍 THANK YOU VERY MUCH 😍")
-    os.exit()
-end 
-
 function setg(offset, new)
   local table = gg.getResults(40)
   for i = 1, #table do
