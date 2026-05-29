@@ -51245,14 +51245,14 @@ SalvarUltimoMenu(nil)
  
 local opcao = gg.choice(
 {
- "🗝️ GOLDPASS CULINARY 🗝️",
+ "🗝️ ITALIAN GOLDPASS 🗝️",
  "🎫 FREEZE COUPON REWARD 🎫",
  "❄️ FREEZE CHEST REWARD ❄️",
  "🎁 CHANGE REWARDS 🎁", 
- "🏆 UNLOCK ACHIEVEMENTS",
- "🐯 UNLOCK ALL ANIMALS ZOO🐯",
- "🏭 FACTORY AND MARKET🏭",
- "🏙️ CITY HACK🏙",
+ "🏆 UNLOCK ACHIEVEMENTS 🏆",
+ "🐯 UNLOCK ALL ANIMALS ZOO 🐯",
+ "🏭 FACTORY AND MARKET 🏭",
+ "🏙️ CITY HACK 🏙️",
  "📥 ENHANCEMENT 📥",
  "⛏️ INCREASE MINE ⛏️",
  "🔙 Exit"
