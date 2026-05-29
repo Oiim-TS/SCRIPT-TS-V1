@@ -51245,7 +51245,7 @@ SalvarUltimoMenu(nil)
  
 local opcao = gg.choice(
 {
- "🗝️ GOLDPASS CULINARY 🗝️",
+ "🗝️ ITALIAN GOLDPASS 🗝️",
  "🎫 FREEZE COUPON REWARD 🎫",
  "❄️ FREEZE CHEST REWARD ❄️",
  "🎁 CHANGE REWARDS 🎁", 
