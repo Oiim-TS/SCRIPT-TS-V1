@@ -50853,53 +50853,7 @@ end
 -- =====================================================
 -- UNLOCK ALL ANIMALS (ZOO) - FINAL VERSION
 -- =====================================================
-function UnlockAnimal()
-    gg.clearResults()
-    
-    -- 1. Set Range Memori: CA (C_ALLOC), A (ANONYMOUS), O (OTHER)
-    gg.setRanges(gg.REGION_C_ALLOC | gg.REGION_ANONYMOUS | gg.REGION_OTHER)
-    
-    gg.toast("🔎 Searching Animas Data 🐘...")
-    
-    -- 2. Mencari grup Hex sesuai permintaan
-    gg.searchNumber("6D65660Ch;6C616D08h", gg.TYPE_DWORD)
 
-    local count = gg.getResultCount()
-    if count == 0 then
-        -- Cadangan jika pencarian Hex langsung tidak membuahkan hasil
-        gg.searchNumber("1835361804;1814154504", gg.TYPE_DWORD)
-        count = gg.getResultCount()
-    end
-
-    if count == 0 then
-        gg.alert("🔙 Data tidak ditemukan!\nPastikan kamu sudah masuk ke area Zoo.")
-        return
-    end
-
-    -- 3. Ambil hasil asli
-    local results = gg.getResults(count)
-    local edits = {}
-
-    gg.toast("⚡ Memproses offset 25...")
-
-    -- 4. Proses Offset & Set Nilai 30 (DESIMAL)
-    for i, v in ipairs(results) do
-        edits[i] = {
-            address = v.address + 25, -- Loncat 25 alamat
-            flags = gg.TYPE_DWORD,
-            value = 30 -- Angka 30 Desimal (Hex tidak dicentang)
-        }
-    end
-
-    -- 5. Masukkan ke Saved List (simbol disket) agar terlihat
-    gg.addListItems(edits)
-    
-    -- 6. Tembak nilai langsung ke memori
-    gg.setValues(edits)
-    
-    gg.toast("✅ SUCCESS! ")
-    gg.alert("✅ PROCESS COMPLETE\n\nAll Animals Have Been Opened")
-end
 function CityMenu()
     local choice = gg.choice({
         "🏗️ • DUPLICATE BUILDINGS",
@@ -51087,41 +51041,7 @@ function QuickActionLand()
     gg.alert("✅ Success! " .. count .. " data changed to 1.\nNow you can open land tiles individually.")
 end
 
--------- ---------
---- achievement 
------------------
-function UnlockAchievements()
-    gg.clearResults()
-    gg.setRanges(gg.REGION_OTHER)
 
-    gg.searchNumber("746E6518h;72706572h;75656E65h;00000072h:13", gg.TYPE_DWORD)
-    gg.refineNumber("746E6518h", gg.TYPE_DWORD)
-
-    local r = gg.getResults(4)
-    local t = {}
-
-    for _, v in ipairs(r) do
-        local base = v.address
-
-        -- pola +54
-        for offset = 6, 11076, 54 do
-            table.insert(t, {
-                address = base + (offset * 4),
-                flags = gg.TYPE_DWORD,
-                value = 0
-            })
-
-            table.insert(t, {
-                address = base + ((offset + 1) * 4),
-                flags = gg.TYPE_DWORD,
-                value = 0
-            })
-        end
-    end
-
-    gg.setValues(t)
-    gg.toast("Unlock Achievements Success")
-end
 --------------------------------------------------
 --Booster Time
 --------------------------------------------------
@@ -51332,8 +51252,6 @@ local opcao = gg.choice(
  "🎫 FREEZE COUPON REWARD 🎫",
  "❄️ FREEZE CHEST REWARD ❄️",
  "🎁 CHANGE REWARDS 🎁", 
- "🏆 UNLOCK ACHIEVEMENTS 🏆",
- "🐯 UNLOCK ALL ANIMALS ZOO 🐯",
  "🏭 FACTORY AND MARKET 🏭",
  "🏙️ CITY HACK 🏙️",
  "📥 ENHANCEMENT 📥",
@@ -51353,14 +51271,12 @@ if opcao then
   	if opcao == 2 then CongelarCupon() end 
 	  if opcao == 3 then Congelar_Tesoro() end
     if opcao == 4 then menuescolhas2(1) end    
-    if opcao == 5 then UnlockAchievements() end
-    if opcao == 6 then UnlockAnimal() end
-    if opcao == 7 then MenuFactoryMarket() end
-	  if opcao == 8 then CityMenu() end
-	  if opcao == 9 then MenuRequest() end
-  	if opcao == 10then hackMineDepth() end
-if opcao == 11 then hackPuzzleMinigame() end
-    if opcao == 12 then EXIT() end
+    if opcao == 5 then MenuFactoryMarket() end
+	  if opcao == 6 then CityMenu() end
+	  if opcao == 7 then MenuRequest() end
+  	if opcao == 8 then hackMineDepth() end
+if opcao == 9 then hackPuzzleMinigame() end
+    if opcao == 10 then EXIT() end
 
   end
 end
