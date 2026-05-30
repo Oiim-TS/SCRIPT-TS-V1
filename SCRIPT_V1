@@ -3293,7 +3293,7 @@ elseif menu_tipo == 77000 then
     if MXC == 12 then hack("np7") end -- SPEED UP TRAIN
     if MXC == 13 then hack("np8") end -- DOUBLE CLOVER
     if MXC == 14 then hack("np9") end -- MATERIAL REQUEST IN COOP
-    if MXC == 15 then menuescolhas2(2) end
+    if MXC == 15 then menuescolhas2(1) end
 	
 	elseif menu_tipo == 1700 then
     MAC = gg.choice({
