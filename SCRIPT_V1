@@ -4,7 +4,7 @@ UltimoMenu = nil
 local naousou = true
 local naousou2 = false
 
-gg.alert("\n═════════ஜ۩۞۩ஜ═════════\n      SCRIPT BY : YT Jesús M\n       UPDATE BY : OIIM\n═════════ஜ۩۞۩ஜ═════════")
+gg.alert("         😎FREE ACCES😎          \n═════════ஜ۩۞۩ஜ═════════\n    SCRIPT BY : YT Jesús M\n       UPDATE BY : OIIM\n═════════ஜ۩۞۩ஜ═════════")
 function SalvarUltimoMenu(menu_tipo)
   UltimoMenu = menu_tipo
 end
@@ -119,8 +119,15 @@ local ranges = {
 local choice = gg.choice(labels, nil, " ✅ Select Memory Range")
 
 if not choice then
-    gg.toast("🔙 Cancelled")
-    os.exit()
+ 
+        gg.toast("💾PILIH RENTANG MEMORI")
+        gg.setVisible(false)
+
+        while not gg.isVisible() do
+            gg.sleep(100)
+        end
+
+        gg.setVisible(false)
 end
 
 gg.setRanges(ranges[choice])
@@ -270,9 +277,16 @@ local ranges = {
 local choice = gg.choice(labels, nil, " ✅ Select Memory Range")
 
 if not choice then
-    gg.toast("🔙 Cancelled")
-    os.exit()
-end
+ 
+        gg.toast("💾PILIH RENTANG MEMORI")
+        gg.setVisible(false)
+
+        while not gg.isVisible() do
+            gg.sleep(100)
+        end
+
+        gg.setVisible(false)
+end 
 
 gg.setRanges(ranges[choice])
 gg.toast("✅ Range Set")
@@ -51098,7 +51112,35 @@ end
 -----------------
 function UnlockAchievements()
     gg.clearResults()
-    gg.setRanges(gg.REGION_OTHER)
+    -- ===== MENU RANGE MEMORI =====
+local GEM = "💾"
+
+local function pretty(t)
+    return GEM .. "  " .. t
+end
+
+local labels = {
+    pretty("O"),
+}
+
+local ranges = {                   -- Ca + A
+    gg.REGION_OTHER,                                             -- O   -- Ca + A + O
+}
+
+local choice = gg.choice(labels, nil, " ✅ Select Memory Range")
+
+if not choice then
+ 
+        gg.toast("💾PILIH RENTANG MEMORI")
+        gg.setVisible(false)
+
+        while not gg.isVisible() do
+            gg.sleep(100)
+        end
+
+        gg.setVisible(false)
+end 
+gg.setRanges(ranges[choice])
 
     gg.searchNumber("746E6518h;72706572h;75656E65h;00000072h:13", gg.TYPE_DWORD)
     gg.refineNumber("746E6518h", gg.TYPE_DWORD)
@@ -51347,7 +51389,12 @@ local opcao = gg.choice(
  "🎮 HACK LEVEL MINIGAMES 🎮",
  "🔙 EXIT"
 },
-nil, '📃 YT: Jesús M  │  Update by : OIIM - (82)²🔔')
+nil,
+[==[
+╔════════════≽^•⩊•^≼════════════╗
+   📃 YT: Jesús M  │  Update by : OIIM - (82)²  🔔
+╚════════════🐾══🐾════════════╝
+]==])
 
 
 if opcao then
