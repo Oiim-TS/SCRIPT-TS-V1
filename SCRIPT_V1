@@ -4,7 +4,7 @@ UltimoMenu = nil
 local naousou = true
 local naousou2 = false
 
-gg.alert("═════ஜ۩۞۩ஜ═════\nSCRIPT BY : YT Jesús M\n     UPDATE BY : Oiim\n═════ஜ۩۞۩ஜ═════")
+gg.alert("\n═════════ஜ۩۞۩ஜ═════════\n      SCRIPT BY : YT Jesús M\n       UPDATE BY : OIIM\n═════════ஜ۩۞۩ஜ═════════")
 function SalvarUltimoMenu(menu_tipo)
   UltimoMenu = menu_tipo
 end
@@ -2316,7 +2316,7 @@ function menuescolhas2(menu_tipo)
   if menu_tipo == 1 then
     MNV = gg.choice({
 '🎎 • SKINS',
-'🎄 • DECORATION',
+'🎄 • DECORATIONS',
 '💵 • TCASH/COIN',
 '🎁 • ITEMS',
 '🎟️ • COUPONS',
@@ -2330,9 +2330,10 @@ function menuescolhas2(menu_tipo)
 '🔙 • BACK'     
     }, nil,
 [==[
-╔════════          ≽^•⩊•^≼         ════════╗
-         📃 YT: Jesús M  │  Update : OIM - (82)²  
-╚════════════════════════════╝]==]
+╔════════════════════════╗                           
+              🎁CHANGE REWARDS 🎁
+╚════════════════════════╝
+]==]
 )
     
   if MNV == nil then return end
@@ -3473,9 +3474,10 @@ elseif menu_tipo == 77000 then
 '🔙 • BACK'
 	  }, nil,
 [==[
-╔════════          ≽^•⩊•^≼         ════════╗
-         📃 YT: Jesús M  │  Update : OIM - (82)²  
-╚════════════════════════════╝]==])
+╔════════════════════════╗                           
+                           🎎SKINS🎎
+╚════════════════════════╝
+]==])
     if MaxJE == nil then return end
     if MaxJE == 1 then SearchSkin() end 
     if MaxJE == 2 then menuescolhas2(101) end
@@ -4119,10 +4121,12 @@ elseif menu_tipo == 77000 then
 "⭐ • THE FIRST",
 "🪧 • TOWN SIGN",
 "🔙 • BACK"   
-    }, nil,[==[
-╔════════          ≽^•⩊•^≼         ════════╗
-         📃 YT: Jesús M  │  Update : OIM - (82)²  
-╚════════════════════════════╝]==])
+    }, nil,
+[==[
+╔════════════════════════╗                           
+                  🎄DECORATIONS🎄
+╚════════════════════════╝
+]==])
     if MaxJP == nil then return end
     if MaxJP == 1 then SearchDecor() end 
     if MaxJP == 2 then menuescolhas2(10000) end
@@ -50911,9 +50915,10 @@ function CityMenu()
         "🧹 • FREEZE POPULATION",
         "🔙 • BACK"
     }, nil, [==[
-╔════════          ≽^•⩊•^≼         ════════╗
-         📃 YT: Jesús M  │  Update : OIM - (82)²  
-╚════════════════════════════╝]==])
+╔════════════════════════╗                           
+                     🏙CITY HACK🌃
+╚════════════════════════╝
+]==])
 
     if choice == 1 then
         MenuDuplicate()
@@ -50955,9 +50960,10 @@ function MenuDuplicate()
 "🔙 • BACK"
     }, nil, 
 [==[
-╔════════          ≽^•⩊•^≼         ════════╗
-         📃 YT: Jesús M  │  Update : OIM - (82)²  
-╚════════════════════════════╝]==])
+╔════════════════════════╗                           
+            🏗DUPLICATE BUILDINGS 🏗
+╚════════════════════════╝
+]==])
 
     if m == 1 then ProsesFitur("City Market","1953063700;77;235:101","1953063700;1::33",1) end
     if m == 2 then ProsesFitur("Cowshed","2003788564;77;235:101","2003788564;3::33",3) end
@@ -51341,11 +51347,7 @@ local opcao = gg.choice(
  "🎮 HACK LEVEL MINIGAMES 🎮",
  "🔙 EXIT"
 },
-nil,
-[==[
-╔════════          ≽^•⩊•^≼         ════════╗
-         📃 YT: Jesús M  │  Update : OIM - (82)²  
-╚════════════════════════════╝]==])
+nil, '📃 YT: Jesús M  │  Update by : OIIM - (82)²🔔')
 
 
 if opcao then
@@ -51358,7 +51360,7 @@ if opcao then
     if opcao == 7 then MenuFactoryMarket() end
 	  if opcao == 8 then CityMenu() end
 	  if opcao == 9 then MenuRequest() end
-  	if opcao == 10then hackMineDepth() end
+  	if opcao == 10 then hackMineDepth() end
 if opcao == 11 then hackPuzzleMinigame() end
     if opcao == 12 then EXIT() end
 
