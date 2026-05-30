@@ -3216,7 +3216,7 @@ elseif menu_tipo == 77000 then
 		    elseif menu_tipo == 675444 then
     PRV = gg.choice({	
          "💵 • TCASH",
-	       "🪙 • COINS " ,
+	     "🪙 • COINS " ,
          "⭐ • EXP ",
          "🔙 • Volver"        
    }, nil, 'CHOOSE ONE OPTION')
@@ -50922,7 +50922,7 @@ end
 function CityMenu()
     local choice = gg.choice({
         "🏗️ • DUPLICATE BUILDINGS",
-        '🎫 • UNLOCK FACTORY',
+        '🏭 • UNLOCK FACTORY',
         '🎫 • UNLOCK COMMUNITY BUILDINGS',
         "🧹 • CLEARENCE OF LAND",
         "🗺️ • OPEN LAND PER TILE",
