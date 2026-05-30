@@ -50170,15 +50170,15 @@ elseif variacao == "r3MaxRFNE" then
 end
 
 function MenuRequest()
-    local choice = gg.choice({
-        "🚂 • XP Train Hack",
-        "🚂 • XP + Card Train Hack",
-        "🚂 • Express Train",
-        "✈️ • XP Plane Hack",
-        "✈️ • Super Jet Plane",
-        "📥 • Zoo Request",
-        "🚢 • Speed Boat",
-        "🔙 • Back"
+    local request = gg.choice({
+        "🚂 • XP TRAIN",
+        "🚂 • XP + CARD",
+        "🚂 • EXPRESS TRAIN",
+        "✈️ • XP PLANE",
+        "✈️ • SUPER JET PLANE",
+        "📥 • ZOO REQUEST",
+        "🚢 • SPEED BOAT",
+        "🔙 • BACK"
     }, nil, [[
 ════════════════════
     📃 Script by : Kcg Oyn 😺 
@@ -50186,21 +50186,21 @@ function MenuRequest()
 ════════════════════
 ]])
 
-if menu == 1 then
+if request == 1 then
         hack_XP_Train()
-    elseif menu == 2 then
+    elseif request == 2 then
         hack_XP_Card_Train()
-    elseif menu == 3 then
+    elseif request == 3 then
         hack_Time_Train()
-    elseif menu == 4 then
+    elseif request == 4 then
         hack_XP_Plane()
-    elseif menu == 5 then
+    elseif request == 5 then
         hack_Time_Plane()
-    elseif menu == 6 then
+    elseif request == 6 then
         hack_Zoo_Request()
-    elseif menu == 7 then
+    elseif request == 7 then
        hack_Time_Ship()
-    elseif choice == 8 then 
+    elseif request == 8 then 
          MENUFREE()
     end
   while true do
