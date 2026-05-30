@@ -3274,7 +3274,6 @@ elseif menu_tipo == 77000 then
 "🚆 • SPEED UP TRAIN",
 "🍀 • DOUBLE CLOVER",
 "🤝 • MATERIAL REQUEST IN COOP",
-"🌾 • XP (WHEAT)",
 "🔙 • BACK"
  
     }, nil,"CHOOSE ONE OPTION")
@@ -3294,8 +3293,7 @@ elseif menu_tipo == 77000 then
     if MXC == 12 then hack("np7") end -- SPEED UP TRAIN
     if MXC == 13 then hack("np8") end -- DOUBLE CLOVER
     if MXC == 14 then hack("np9") end -- MATERIAL REQUEST IN COOP
-    if MXC == 15 then hack16(true) end
-    if MXC == 16 then menuescolhas2(2) end
+    if MXC == 15 then menuescolhas2(2) end
 	
 	elseif menu_tipo == 1700 then
     MAC = gg.choice({
@@ -50196,6 +50194,7 @@ function MenuRequest()
         "✈️ • SUPER JET PLANE",
         "📥 • ZOO REQUEST",
         "🚢 • SPEED BOAT",
+    	"🌾 • XP (WHEAT)",
         "🔙 • BACK"
     }, nil, [[
 ════════════════════
@@ -50218,7 +50217,9 @@ if request == 1 then
         hack_Zoo_Request()
     elseif request == 7 then
        hack_Time_Ship()
-    elseif request == 8 then 
+	elseif request == 8 then 
+	   hack16(true) end
+    elseif request == 9 then 
          MENUFREE()
     end
   while true do
