@@ -5,10 +5,7 @@ local naousou = true
 local naousou2 = false
 
 gg.alert(
-"═════════ஜ۩۞۩ஜ═════════\n
-  SCRIPT BY : YT Jesús M\n  
-      UPDATE BY : OIIM\n
- ═════════ஜ۩۞۩ஜ═════════")
+"═════════ஜ۩۞۩ஜ═════════\n          SCRIPT BY : YT Jesús M\n        UPDATE BY : OIIM\n═════════ஜ۩۞۩ஜ═════════")
 function SalvarUltimoMenu(menu_tipo)
   UltimoMenu = menu_tipo
 end
