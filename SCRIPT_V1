@@ -3185,11 +3185,11 @@ if TTL == 13 then menuescolhas2(1) end
 	
   elseif menu_tipo == 77329 then
     MGGDUT = gg.choice({
-'🃏 • GREEN PACKAGE',
-'🃏 • GOLD PACKAGE',
-'🃏 • PURPLE PACKAGE',
 '🃏 • BROWN PACKAGE',
+'🃏 • GREEN PACKAGE',
 '🃏 • BLUE PACKAGE',
+'🃏 • PURPLE PACKAGE',
+'🃏 • GOLD PACKAGE',
       '🔙 • Return'     
     }, nil, 'CHOOSE ONE OPTION')
   if MGGDUT == nil then return end
