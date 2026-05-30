@@ -898,7 +898,7 @@ function SearchSkin()
 
   for i, v in ipairs(SkinData) do
     if string.find(string.lower(v.name), key, 1, true) then
-      table.insert(names, "🎄 • " .. v.name)
+      table.insert(names, "🎎 • " .. v.name)
       refs[#names] = v.code
     end
   end
@@ -1980,7 +1980,7 @@ DecorData = {
 -- Fungsi untuk mencari dekorasi atau SKIN berdasarkan nama atau ID
 function SearchDecor()
   local input = gg.prompt(
-    {"🔍 Cari DEKOR (KETIK KEYWORD)"},
+    {"🔍 CARI DEKOR (KETIK KEYWORD)"},
     {""},
     {"text"}
   )
@@ -1992,7 +1992,7 @@ function SearchDecor()
 
   for i, v in ipairs(DecorData) do
     if string.find(string.lower(v.name), key, 1, true) then
-      table.insert(names, "🎲 • " .. v.name)
+      table.insert(names, "🎄 • " .. v.name)
       refs[#names] = v.code
     end
   end
@@ -2373,7 +2373,7 @@ function menuescolhas2(menu_tipo)
 "⚒️ • MATERIAL",
 "💎 • GEMS",
 "🔬 • LABORATORY BOOSTER",
-"🎮 • BOOSTER 3 MATCH LEVEL",
+"🎮 • BOOSTER MINIGAME",
 "🪙 • TOKENS",
 "🔙 • BACK"
     }, nil,   'CHOOSE ITEMS')
@@ -3353,7 +3353,7 @@ elseif menu_tipo == 77000 then
 
 	  elseif menu_tipo == 170 then
 	    MRT = gg.choice({
-"❤️ • LIVES",--1
+"❤️ • UNLIMITED LIVES",--1
 "🚀 • RAINBOW BALL",--2
 "🚀 • ROCKET",--3
 "🚀 • DYNAMITE",--4
