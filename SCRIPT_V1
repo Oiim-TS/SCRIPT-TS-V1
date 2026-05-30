@@ -2730,9 +2730,9 @@ if MAVATR == 175 then menuescolhas2(1) end
 	
 	  elseif menu_tipo == 552 then
     SDIF = gg.choice({
-         '🏭 • Sticker menu 1',
-         '🏭 • Sticker menu 2',
-         '🔙 • Return'
+         '🏭 • STICKER MENU 1',
+         '🏭 • STICKER MENU 2',
+         '🔙 • BACK'
     }, nil,   'CHOOSE ONE OPTION')
     
     if SDIF == nil then return end
