@@ -34723,7 +34723,7 @@ local int1 = nil
   variacao == "lb1" or variacao == "lb2" or variacao == "lb3" or variacao == "lb4" or variacao == "lb5" or 
   variacao == "lb6" or variacao == "lb7" or variacao == "lb8" or variacao == "lb9" or variacao == "lb10" or
   variacao == "lb11" or variacao == "lb12" or variacao == "lb13" or variacao == "lb14" or variacao == "lb15" or variacao == "lb16" then
-    int1 = gg.prompt({"Amount? Fill it as appropriate 😂 "}, {1}, {"number"})
+    int1 = gg.prompt({"JUMLAH? ISI SEWAJARNYA😂 "}, {1}, {"number"})
     int1[1] = tonumber(int1[1])
   end
 
