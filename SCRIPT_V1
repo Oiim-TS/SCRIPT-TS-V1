@@ -51203,6 +51203,112 @@ function hackMineDepth()
     gg.clearResults()
 end
 
+function hackPuzzleMinigame()
+
+    -- Input awal
+    local p = gg.prompt(
+        {
+            "Masukkan level puzzle sekarang:",
+            "Edit level puzzle menjadi (75 - 275):"
+        },
+        {
+            1,
+            75
+        },
+        {
+            "number",
+            "number"
+        }
+    )
+
+    if not p then
+        gg.toast("Dibatalkan")
+        return
+    end
+
+    local level = tonumber(p[1])
+    local editValue = tonumber(p[2])
+
+    -- Validasi value edit
+    if editValue < 75 or editValue > 275 then
+        gg.alert("Edit level puzzle hanya boleh antara 75 - 275")
+        return
+    end
+
+    -- Search awal
+    local current = level - 1
+
+    gg.clearResults()
+    gg.searchNumber(current .. ";86400", gg.TYPE_DWORD)
+
+    gg.toast("Search : " .. current .. ";86400")
+
+    -- Loop refine manual
+    while true do
+
+    if gg.getResultsCount() <= 2 then
+        break
+    end
+
+    local refineInput = gg.prompt(
+        {
+            "Naikkan puzzle 1 level lalu input level terbaru:"
+        },
+        {
+            level + 1
+        },
+        {
+            "number"
+        }
+    )
+
+    -- Cancel = lanjut main puzzle dulu
+    if not refineInput then
+
+        gg.toast("Main puzzle dulu")
+
+        gg.setVisible(false)
+
+        while not gg.isVisible() do
+            gg.sleep(100)
+        end
+
+        gg.setVisible(false)
+
+    else
+
+        level = tonumber(refineInput[1])
+
+        current = level - 1
+
+        gg.refineNumber(current .. ";86400", gg.TYPE_DWORD)
+
+        gg.toast("Refine : " .. current .. ";86400")
+
+    end
+
+end
+
+    local results = gg.getResults(2)
+
+    if #results < 2 then
+        gg.alert("Value tidak ditemukan")
+        return
+    end
+
+    -- Urutkan value kecil
+    table.sort(results, function(a, b)
+        return a.value < b.value
+    end)
+
+    -- Edit value kecil
+    results[1].value = editValue
+
+    gg.setValues({results[1]})
+
+    gg.toast("Berhasil edit level puzzle menjadi " .. editValue)
+
+end
  --exit
 function EXIT()
   gg.toast("❤️ HACKING COMPLETED ❤️")
@@ -51232,6 +51338,7 @@ local opcao = gg.choice(
  "🏙️ CITY HACK 🏙️",
  "📥 ENHANCEMENT 📥",
  "⛏️ INCREASE MINE ⛏️",
+ "🎮 HACK LEVEL MINIGAMES 🎮",
  "🔙 EXIT"
 },
 nil,
@@ -51252,7 +51359,8 @@ if opcao then
 	  if opcao == 8 then CityMenu() end
 	  if opcao == 9 then MenuRequest() end
   	if opcao == 10then hackMineDepth() end
-    if opcao == 11 then EXIT() end
+if opcao == 11 then hackPuzzleMinigame() end
+    if opcao == 12 then EXIT() end
 
   end
 end
