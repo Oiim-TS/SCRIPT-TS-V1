@@ -4,7 +4,7 @@ UltimoMenu = nil
 local naousou = true
 local naousou2 = false
 
-gg.alert("═════════ஜ۩۞۩ஜ═════════\n          SCRIPT BY : YT Jesús M\n        UPDATE BY : OIIM\n═════════ஜ۩۞۩ஜ═════════")
+gg.alert("═════════ஜ۩۞۩ஜ═════════\n                  SCRIPT BY : YT Jesús M\n                UPDATE BY : OIIM\n═════════ஜ۩۞۩ஜ═════════")
 function SalvarUltimoMenu(menu_tipo)
   UltimoMenu = menu_tipo
 end
@@ -50623,7 +50623,7 @@ end
 function hack_Zoo_Request()
 
     local input = gg.prompt(
-        {"Masukkan jumlah Coin Zoo (100000 - 750000)"},
+        {"Masukkan jumlah Coin Zoo (100000 - 550000)"},
         {"500000"},
         {"number"}
     )
@@ -50632,8 +50632,8 @@ function hack_Zoo_Request()
 
     local amount = tonumber(input[1])
 
-    if amount == nil or amount < 100000 or amount > 650000 then
-        gg.alert("Hanya bisa angka 100000 sampai 650000")
+    if amount == nil or amount < 100000 or amount > 550000 then
+        gg.alert("Hanya bisa angka 100000 sampai 550000")
         return
     end
 
@@ -50917,7 +50917,7 @@ function UnlockAnimal()
     gg.setValues(edits)
     
     gg.toast("✅ SUCCESS! ")
-    gg.alert("✅ PROCESS COMPLETE\n\nAll Animals Have Been Opened")
+    gg.alert("✅ PROCESS COMPLETE\n\nALL ANIMALS HAVE BEEN OPENED")
 end
 function CityMenu()
     local choice = gg.choice({
@@ -51169,7 +51169,7 @@ gg.setRanges(ranges[choice])
     end
 
     gg.setValues(t)
-    gg.toast("Unlock Achievements Success")
+    gg.alert("🏆UNLOCK ACHIEVMENTS SUCCESS🏆")
 end
 --------------------------------------------------
 --Booster Time
