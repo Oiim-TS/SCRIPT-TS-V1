@@ -6620,31 +6620,6 @@ function hack15cD()-- 6E72651Ch;465F6569h;696B5310h;72545F6Eh
 
 end
 
-function hack16(isFree)
-  gg.toast( "Loadiing...🥰")
-  gg.processResume()
-  gg.clearResults()
-  gg.setVisible(false)
-  gg.searchNumber("120;300", gg.TYPE_FLOAT)
-  gg.refineNumber("120", gg.TYPE_FLOAT)
-  xps = gg.prompt({[1] =  "Desired XP amount? Max: 9000"}, {[1] = "0"}, {[1] = "text"})
-  
-  if xps == nil then
-    if isFree then
-      MENUFREE()
-    else
-      MENUFREE()
-    end
-  else
-    xps[1] = tonumber(xps[1])
-    setd(0, 0)
-    setd(16, 0)
-    setd(20, xps[1])
-    gg.clearResults()
-    gg.clearList()
-  end
-end
-
 function hack15cDn()
   gg.toast( "Cargando...") --696B5326h;69415F6Eh;616C7072h;735F656Eh;65636170h --616C7072h;735F656Eh;65636170h 65726F63h;72616D10h;696B532Ah SKIN_Chicken_space 1.937.011.470;1.701.998.435 .erniemars025
   gg.processResume() --6E72651Ch;00353230h;00000031h 6E72651Ch;32737261h;00000031h  
