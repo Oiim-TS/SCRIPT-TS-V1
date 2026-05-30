@@ -2331,8 +2331,9 @@ function menuescolhas2(menu_tipo)
     MNV = gg.choice({
 '🎎 • SKINS',
 '🎄 • DECORATIONS',
-'💵 • TCASH/COIN',
+'💵 • TCASH|COIN|EXP',
 '🎁 • ITEMS',
+"✨ • PERK", 
 '🎟️ • COUPONS',
 '🎯 • AVATAR',
 '⚓ • STICKERS',
@@ -2355,24 +2356,24 @@ function menuescolhas2(menu_tipo)
 	if MNV == 2 then menuescolhas2(12) end
 	if MNV == 3 then menuescolhas2(675444) end 
   if MNV == 4 then menuescolhas2(2) end
-  if MNV == 5 then menuescolhas2(5) end
-	if MNV == 6 then menuescolhas2(551) end
-  if MNV == 7 then menuescolhas2(552) end
-	if MNV == 8 then menuescolhas2(22987) end
-	if MNV == 9 then menuescolhas2(22000) end
-	if MNV == 10 then menuescolhas2(9287) end
-  if MNV == 11 then menuescolhas2(77329) end
-  if MNV == 12 then menuescolhas2(77000) end
-  if MNV == 13 then MENUFREE() end
+  if MNV == 5 then menuescolhas2(15) end
+  if MNV == 6 then menuescolhas2(5) end
+  if MNV == 7 then menuescolhas2(551) end
+  if MNV == 8 then menuescolhas2(552) end
+  if MNV == 9 then menuescolhas2(22987) end
+  if MNV == 10 then menuescolhas2(22000) end
+  if MNV == 11 then menuescolhas2(9287) end
+  if MNV == 12 then menuescolhas2(77329) end
+  if MNV == 13 then menuescolhas2(77000) end
+  if MNV == 14 then MENUFREE() end
 
   elseif menu_tipo == 2 then
     MNZ = gg.choice({
 "⛏️ • MINING",
-"🏭 • MATERIAL",
+"⚒️ • MATERIAL",
 "💎 • GEMS",
-"🎁 • PERK",
-"🚀 • LABORATORY BOOSTER",
-"🚀 • BOOSTER 3 MATCH LEVEL",
+"🔬 • LABORATORY BOOSTER",
+"🎮 • BOOSTER 3 MATCH LEVEL",
 "🪙 • TOKENS",
 "🔙 • BACK"
     }, nil,   'CHOOSE ITEMS')
@@ -2381,11 +2382,10 @@ function menuescolhas2(menu_tipo)
     if MNZ == 1 then menuescolhas2(7) end
     if MNZ == 2 then menuescolhas2(8) end
     if MNZ == 3 then menuescolhas2(9) end
-	if MNZ == 4 then menuescolhas2(15) end
-    if MNZ == 5 then menuescolhas2(16) end
-    if MNZ == 6 then menuescolhas2(170) end
-    if MNZ == 7 then menuescolhas2(1700) end
-    if MNZ == 8 then menuescolhas2(1) end
+    if MNZ == 4 then menuescolhas2(16) end
+    if MNZ == 5 then menuescolhas2(170) end
+    if MNZ == 6 then menuescolhas2(1700) end
+    if MNZ == 7 then menuescolhas2(1) end
 	
     elseif menu_tipo == 551 then
     MAVATR = gg.choice({
